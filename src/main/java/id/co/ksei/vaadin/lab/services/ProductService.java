@@ -44,6 +44,29 @@ public class ProductService {
                 .bodyToMono(ProductsResponse.class);
     }
 
+    public Mono<Product> getProductById(Integer id) {
+        return webClient.get()
+                .uri("/products/" + id)
+                .retrieve()
+                .bodyToMono(Product.class);
+    }
+
+    public Mono<Product> addProduct(Product product) {
+        return webClient.post()
+                .uri("/products/add")
+                .bodyValue(product)
+                .retrieve()
+                .bodyToMono(Product.class);
+    }
+
+    public Mono<Product> updateProduct(Product product) {
+        return webClient.put()
+                .uri("/products/" + product.getId())
+                .bodyValue(product)
+                .retrieve()
+                .bodyToMono(Product.class);
+    }
+
     public Mono<List<Category>> getCategories() {
         return webClient.get()
                 .uri("/product/categories")
