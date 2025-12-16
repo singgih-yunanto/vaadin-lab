@@ -32,6 +32,12 @@ public class ProductService {
                     uriBuilder.path("/products")
                             .queryParam("limit", limit)
                             .queryParam("skip", offset);
+
+                    if (StringUtils.isNotBlank(search)) {
+                        uriBuilder.path("/search")
+                                .queryParam("q", search);
+                    }
+
                     return uriBuilder.build();
                 })
                 .retrieve()
