@@ -27,7 +27,7 @@
 	</scm>
 	<properties>
 		<java.version>11</java.version>
-		<vaadin.version>14.4.0</vaadin.version>
+		<vaadin.version>14.11.13</vaadin.version>
 	</properties>
 	<dependencies>
         <dependency>
@@ -38,6 +38,12 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-webflux</artifactId>
 		</dependency>
+
+        <dependency>
+            <groupId>net.datafaker</groupId>
+            <artifactId>datafaker</artifactId>
+            <version>1.9.0</version>
+        </dependency>
 
 		<dependency>
 			<groupId>org.projectlombok</groupId>
@@ -78,6 +84,7 @@
 						<path>
 							<groupId>org.projectlombok</groupId>
 							<artifactId>lombok</artifactId>
+                            <version>${lombok.version}</version>
 						</path>
 					</annotationProcessorPaths>
 				</configuration>
